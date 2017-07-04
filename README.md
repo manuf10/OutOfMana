@@ -1,0 +1,2 @@
+# OutOfMana
+WoW Vanilla Addon
