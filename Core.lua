@@ -85,6 +85,7 @@ function OutOfMana:ShowHelp()
     OutOfMana:Print("/oomaddon add Name1 Name2 NameN" .. mifontSubWhite .. "\nExample: /oomaddon add Auroro Ryrorin")
     OutOfMana:Print("/oomaddon remove Name1 Name2 NameN" .. mifontSubWhite .. "\nExample: /oomaddon remove Auroro Ryrorin")
     OutOfMana:Print("/oomaddon list" .. mifontSubWhite .. " Shows the full list in chat.")
+    OutOfMana:Print("/oomaddon clear" .. mifontSubWhite .. " Clears the entire list.")
     OutOfMana:Print("/oomaddon mana" .. mifontLightBlue .. " Shows mana percentage in chat.")
 end
 
@@ -116,7 +117,7 @@ function OutOfMana:ShowPercentage()
     if count > 0 then
         local percentage = current_mana * 100 / total_mana
         if count == count_alives then
-            SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (Alive: " .. count)" , channel, "COMMON", nil);
+            SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (" .. count ..  " healers found)" , channel, "COMMON", nil);
         else
             SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (Alive: " ..  count_alives 
             .. ". Dead: " .. count - count_alives .. ")" , channel, "COMMON", nil);
