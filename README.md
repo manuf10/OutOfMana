@@ -9,7 +9,7 @@ Vanilla WoW Addon
 ### How it works ###
 
 The addon keeps track of a players names list wich is saved and reused everytime you log in and out.
-For convenience the *entire* (as of today) list of <Intoxicated> healers are loaded by default the first time you use this addon.
+For convenience the *entire* list (as of today) of <Intoxicated> healers are loaded by default the first time you use this addon.
 This list can be eddited manually using the commands showed below.
 
 ### Usage ###
