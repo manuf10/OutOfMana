@@ -117,7 +117,11 @@ function OutOfMana:ShowPercentage()
     if count > 0 then
         local percentage = current_mana * 100 / total_mana
         if count == count_alives then
-            SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (" .. count ..  " healers found)" , channel, "COMMON", nil);
+            if count_alives == 0 then
+                self:Print("There are no healers alive!")
+            else
+                SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (" .. count ..  " healers found)" , channel, "COMMON", nil);
+            end
         else
             SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (Alive: " ..  count_alives 
             .. ". Dead: " .. count - count_alives .. ")" , channel, "COMMON", nil);
