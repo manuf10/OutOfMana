@@ -21,6 +21,6 @@ Type "/oomaddon help" in chat to get the commands list.
 
 ![Help](help.jpg)
 
-Instead of typing out "/oomaddon mana" every time you want to check the mana percetange you can make a macro like the following:
+Instead of typing out "/oomaddon mana" every time you want to check the mana percetange of your healers you can make a macro like the following:
 
 ![Macro](macro.jpg)
