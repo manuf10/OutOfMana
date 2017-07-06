@@ -12,7 +12,7 @@ Download as zip, extract the folder "OutOfMana-master" to [YourWowDirectory]/Int
 The addon keeps track of a players names list wich is saved and reused everytime you log in and out.  
 When you make use of the */oomaddon mana* command this addon checks every name on that list one by one, if there is a player named that way in your party/raid then it retrieves his/her current mana and total mana pool.  
 
-For convenience the *entire* list (as of today) of <Intoxicated> healers are loaded by default the first time you use this addon.  
+For convenience the *entire* list (as of today) of \<Intoxicated\> healers are loaded by default the first time you use this addon.  
 This list can be eddited manually using the commands showed below.  
 
 ### Usage ###
