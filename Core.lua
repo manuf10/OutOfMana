@@ -67,8 +67,10 @@ local function handler(msg, editbox)
         OutOfMana:ShowList()
 
     -- /oomaddon mana will write the mana % in chat
-	elseif command == "mana" then
-		OutOfMana:ShowPercentage()
+	elseif command == "saymana" then
+		OutOfMana:ShowPercentage(true)
+    elseif command == "mana" then
+		OutOfMana:ShowPercentage(false)
 	end
 end
 SlashCmdList["OUTOFMANA"] = handler;
@@ -86,10 +88,11 @@ function OutOfMana:ShowHelp()
     OutOfMana:Print("/oomaddon remove Name1 Name2 NameN" .. mifontSubWhite .. "\nExample: /oomaddon remove Auroro Ryrorin")
     OutOfMana:Print("/oomaddon list" .. mifontSubWhite .. " Shows the full list in chat.")
     OutOfMana:Print("/oomaddon clear" .. mifontSubWhite .. " Clears the entire list.")
-    OutOfMana:Print("/oomaddon mana" .. mifontLightBlue .. " Shows mana percentage in chat.")
+    OutOfMana:Print("/oomaddon mana" .. mifontLightBlue .. " Shows mana percentage in your chat window only.")
+    OutOfMana:Print("/oomaddon saymana" .. mifontLightBlue .. " Says mana percentage in party/raid chat.") 
 end
 
-function OutOfMana:ShowPercentage()
+function OutOfMana:ShowPercentage(send_group)
 	local total_mana = 0
 	local current_mana = 0
 	local count = 0
@@ -120,14 +123,23 @@ function OutOfMana:ShowPercentage()
             if count_alives == 0 then
                 self:Print("There are no healers alive!")
             else
-                SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (" .. count ..  " healers found)" , channel, "COMMON", nil);
+                if send_group then
+                    SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (" .. count ..  " healers found)" , channel, "COMMON", nil);
+                else
+                    self:Print("Healers MANA: " .. math.floor(percentage) .. "% (" .. count ..  " healers found)")
+                end
             end
         else
-            SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (Alive: " ..  count_alives 
-            .. ". Dead: " .. count - count_alives .. ")" , channel, "COMMON", nil);
+            if send_group then
+                SendChatMessage("Healers MANA: " .. math.floor(percentage) .. "% (Alive: " ..  count_alives 
+                    .. ". Dead: " .. count - count_alives .. ")" , channel, "COMMON", nil);
+            else
+                self:Print("Healers MANA: " .. math.floor(percentage) .. "% (Alive: " ..  count_alives 
+                    .. ". Dead: " .. count - count_alives .. ")")
+            end
         end
     else
-        self:Print("Your list is empty OR none of the listed healers were found in your raid!\nfuckyou")
+        self:Print("Your list is empty OR none of the listed healers were found in your raid!")
     end
 end
 
