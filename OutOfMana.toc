@@ -1,6 +1,6 @@
 ## Interface: 11200
 ## Title: OutOfMana
-## Notes: Share your Fear Ward cooldown with your buddies.
+## Notes: Print raid healers mana status on chat
 ## Author: Sabio
 ## Version: 1.0
 ## X-Category: Interface Enhancements 
