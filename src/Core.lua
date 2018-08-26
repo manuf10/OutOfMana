@@ -1,10 +1,7 @@
 -- If you like the addon you can support the creator sending two coins of gold to Sabio!
 -- 1% of the raised gold will be donated to the local gnomish orphanage
 
--- Default healers list:
-local default_list = { "Bluediamond", "Elfiehughes", "Cambodelish", "Scarumon", "Fahque", "Twixt",
-"Syfilisulla","Hammersplat", "Sabio", "Auroro", "Borovir", "Artamiel", "Addiictive",
-"Healyheals", "Abilify", "Ryrorin", "Dense", "Fupp", "Cosmology", "Appletini" }
+local default_list = { }
 
 OutOfMana = AceLibrary("AceAddon-2.0"):new("AceConsole-2.0", "AceEvent-2.0", "AceDebug-2.0")
 roster = AceLibrary("RosterLib-2.0")
