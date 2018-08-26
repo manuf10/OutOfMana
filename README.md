@@ -1,5 +1,7 @@
 # OutOfMana
-Vanilla WoW Addon
+WoW Vanilla Addon
+
+Print raid healers mana status on chat
 
 ### In-game image ##
 
